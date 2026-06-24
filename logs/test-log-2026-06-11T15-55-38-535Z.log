@@ -1,0 +1,12 @@
+[2026-06-11T15:55:43.085Z] ----------------------------------------------------------------------------------------------------
+[2026-06-11T15:55:43.085Z] START TEST: should login successfully with valid credentials
+[2026-06-11T15:55:43.085Z] ----------------------------------------------------------------------------------------------------
+[2026-06-11T15:55:43.087Z] Inputting standard_user1 into element: Username
+[2026-06-11T15:55:43.088Z] 👀 Waiting for Username to be visible...
+[2026-06-11T15:55:43.164Z] ✅  Username is visible.
+[2026-06-11T15:55:43.229Z] Inputting secret_sauce into element: Password
+[2026-06-11T15:55:43.229Z] 👀 Waiting for Password to be visible...
+[2026-06-11T15:55:43.239Z] ✅  Password is visible.
+[2026-06-11T15:55:43.257Z] Clicking element: Login Button
+[2026-06-11T15:55:43.257Z] 👀 Waiting for Login Button to be visible...
+[2026-06-11T15:55:43.265Z] ✅  Login Button is visible.

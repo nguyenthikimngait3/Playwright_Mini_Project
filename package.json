@@ -1,0 +1,20 @@
+{
+  "name": "mini_project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {},
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.60.0",
+    "@types/dotenv": "^8.2.3",
+    "@types/node": "^25.9.3"
+  },
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "dotenv": "^17.4.2",
+    "path": "^0.12.7"
+  }
+}

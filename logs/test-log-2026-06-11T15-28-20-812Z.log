@@ -1,0 +1,39 @@
+[2026-06-11T15:28:28.496Z] ----------------------------------------------------------------------------------------------------
+[2026-06-11T15:28:28.496Z] START TEST: should login successfully with valid credentials
+[2026-06-11T15:28:28.496Z] ----------------------------------------------------------------------------------------------------
+[2026-06-11T15:28:28.500Z] Inputting standard_user into element: Username
+[2026-06-11T15:28:28.501Z] 👀 Waiting for Username to be visible...
+[2026-06-11T15:28:28.600Z] ✅  Username is visible.
+[2026-06-11T15:28:28.663Z] Inputting secret_sauce into element: Password
+[2026-06-11T15:28:28.664Z] 👀 Waiting for Password to be visible...
+[2026-06-11T15:28:28.674Z] ✅  Password is visible.
+[2026-06-11T15:28:28.693Z] Clicking element: Login Button
+[2026-06-11T15:28:28.693Z] 👀 Waiting for Login Button to be visible...
+[2026-06-11T15:28:28.701Z] ✅  Login Button is visible.
+[2026-06-11T15:28:28.962Z] 🎉 Pass: Login successful with secure credentials!
+[2026-06-11T15:28:30.310Z] ----------------------------------------------------------------------------------------------------
+[2026-06-11T15:28:30.310Z] START TEST: should show error message for locked out user
+[2026-06-11T15:28:30.310Z] ----------------------------------------------------------------------------------------------------
+[2026-06-11T15:28:30.311Z] Inputting locked_out_user into element: Username
+[2026-06-11T15:28:30.311Z] 👀 Waiting for Username to be visible...
+[2026-06-11T15:28:30.362Z] ✅  Username is visible.
+[2026-06-11T15:28:30.379Z] Inputting secret_sauce into element: Password
+[2026-06-11T15:28:30.379Z] 👀 Waiting for Password to be visible...
+[2026-06-11T15:28:30.386Z] ✅  Password is visible.
+[2026-06-11T15:28:30.401Z] Clicking element: Login Button
+[2026-06-11T15:28:30.401Z] 👀 Waiting for Login Button to be visible...
+[2026-06-11T15:28:30.409Z] ✅  Login Button is visible.
+[2026-06-11T15:28:30.480Z] 🎉 Pass: Locked out behavior verified securely.
+[2026-06-11T15:28:32.700Z] ----------------------------------------------------------------------------------------------------
+[2026-06-11T15:28:32.700Z] START TEST: should show error message when username or password is incorrect
+[2026-06-11T15:28:32.700Z] ----------------------------------------------------------------------------------------------------
+[2026-06-11T15:28:32.700Z] Inputting invalid_user_999 into element: Username
+[2026-06-11T15:28:32.701Z] 👀 Waiting for Username to be visible...
+[2026-06-11T15:28:32.743Z] ✅  Username is visible.
+[2026-06-11T15:28:32.761Z] Inputting wrong_password_123 into element: Password
+[2026-06-11T15:28:32.761Z] 👀 Waiting for Password to be visible...
+[2026-06-11T15:28:32.771Z] ✅  Password is visible.
+[2026-06-11T15:28:32.788Z] Clicking element: Login Button
+[2026-06-11T15:28:32.788Z] 👀 Waiting for Login Button to be visible...
+[2026-06-11T15:28:32.795Z] ✅  Login Button is visible.
+[2026-06-11T15:28:32.870Z] 🎉 Pass: Wrong credentials behavior verified securely.

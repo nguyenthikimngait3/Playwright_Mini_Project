@@ -1,0 +1,35 @@
+[2026-06-11T15:55:51.105Z] ----------------------------------------------------------------------------------------------------
+[2026-06-11T15:55:51.105Z] START TEST: should show error message for locked out user
+[2026-06-11T15:55:51.105Z] ----------------------------------------------------------------------------------------------------
+[2026-06-11T15:55:51.108Z] Inputting locked_out_user into element: Username
+[2026-06-11T15:55:51.108Z] 👀 Waiting for Username to be visible...
+[2026-06-11T15:55:51.170Z] ✅  Username is visible.
+[2026-06-11T15:55:51.195Z] Inputting secret_sauce into element: Password
+[2026-06-11T15:55:51.196Z] 👀 Waiting for Password to be visible...
+[2026-06-11T15:55:51.205Z] ✅  Password is visible.
+[2026-06-11T15:55:51.223Z] Clicking element: Login Button
+[2026-06-11T15:55:51.223Z] 👀 Waiting for Login Button to be visible...
+[2026-06-11T15:55:51.230Z] ✅  Login Button is visible.
+[2026-06-11T15:55:51.327Z] 🎉 Pass: Locked out behavior verified securely.
+[2026-06-11T15:55:53.528Z] ----------------------------------------------------------------------------------------------------
+[2026-06-11T15:55:53.528Z] START TEST: should show error message when username or password is incorrect
+[2026-06-11T15:55:53.528Z] ----------------------------------------------------------------------------------------------------
+[2026-06-11T15:55:53.529Z] Inputting invalid_user_999 into element: Username
+[2026-06-11T15:55:53.529Z] 👀 Waiting for Username to be visible...
+[2026-06-11T15:55:53.574Z] ✅  Username is visible.
+[2026-06-11T15:55:53.591Z] Inputting wrong_password_123 into element: Password
+[2026-06-11T15:55:53.592Z] 👀 Waiting for Password to be visible...
+[2026-06-11T15:55:53.599Z] ✅  Password is visible.
+[2026-06-11T15:55:53.625Z] Clicking element: Login Button
+[2026-06-11T15:55:53.625Z] 👀 Waiting for Login Button to be visible...
+[2026-06-11T15:55:53.639Z] ✅  Login Button is visible.
+[2026-06-11T15:55:53.706Z] 🎉 Pass: Wrong credentials behavior verified securely.
+[2026-06-11T15:55:55.896Z] Inputting standard_user1 into element: Username
+[2026-06-11T15:55:55.896Z] 👀 Waiting for Username to be visible...
+[2026-06-11T15:55:55.945Z] ✅  Username is visible.
+[2026-06-11T15:55:55.961Z] Inputting secret_sauce into element: Password
+[2026-06-11T15:55:55.962Z] 👀 Waiting for Password to be visible...
+[2026-06-11T15:55:55.969Z] ✅  Password is visible.
+[2026-06-11T15:55:55.989Z] Clicking element: Login Button
+[2026-06-11T15:55:55.989Z] 👀 Waiting for Login Button to be visible...
+[2026-06-11T15:55:55.997Z] ✅  Login Button is visible.
