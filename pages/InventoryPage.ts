@@ -8,6 +8,7 @@ export class InventoryPage extends BasePage {
     readonly shoppingCartLink: Locator;
     readonly shoppingCartBadge: Locator;
     readonly productSortDropdown: Locator;
+    logName: string | null = null;
 
     constructor(page: Page) {
         super(page);
@@ -15,6 +16,11 @@ export class InventoryPage extends BasePage {
         this.shoppingCartLink = this.page.locator("a.shopping_cart_link");
         this.shoppingCartBadge = this.page.locator("span.shopping_cart_badge");
         this.productSortDropdown = this.page.locator("select[data-test='product-sort-container']");
+    }
+
+    setLog(logName: string): InventoryPage {
+        this.logName = logName;
+        return this;
     }
 
     // Hàm lấy nút Add to Cart dựa theo tên sản phẩm
@@ -34,21 +40,25 @@ export class InventoryPage extends BasePage {
         return this.page.locator(`div.inventory_item_name`, { hasText: productName });
     }
 
+    // Thêm sản phẩm vào giỏ
     async addProductToCart(productName: string) {
         logStep(`🛒 Adding product to cart: ${productName}`);
         await this.clickElement(this.getProductAddToCartButton(productName), `Add to cart button for ${productName}`);
     }
 
-    async removeProductFromCart(productName: string) {
-        logStep(`🗑️ Removing product from cart: ${productName}`);
-        await this.clickElement(this.getProductRemoveButton(productName), `Remove button for ${productName}`);
+    // Xóa sản phẩm từ giỏ
+    async removeProductFromCart() {
+        logStep(`🗑️ Removing product from cart: ${this.logName}`);
+        await this.clickElement(this.getProductRemoveButton(this.logName ?? ''), `Remove button for ${this.logName}`);
     }
 
+    // Click sản phẩm
     async clickProductTitle(productName: string) {
         logStep(`🔗 Clicking on product title: ${productName}`);
         await this.clickElement(this.getProductTitleLink(productName), `Title link of ${productName}`);
     }
 
+    // Sort sản phẩm
     async sortProducts(optionValue: string) {
         logStep(`🔍 Sorting products by option: ${optionValue}`);
         await this.productSortDropdown.selectOption(optionValue);

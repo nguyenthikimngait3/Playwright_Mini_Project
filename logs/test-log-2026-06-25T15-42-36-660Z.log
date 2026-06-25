@@ -1,0 +1,21 @@
+[2026-06-25T15:42:41.111Z] Inputting standard_user into element: Username
+[2026-06-25T15:42:41.112Z] 👀 Waiting for Username to be visible...
+[2026-06-25T15:42:41.193Z] ✅  Username is visible.
+[2026-06-25T15:42:41.235Z] Inputting secret_sauce into element: Password
+[2026-06-25T15:42:41.235Z] 👀 Waiting for Password to be visible...
+[2026-06-25T15:42:41.246Z] ✅  Password is visible.
+[2026-06-25T15:42:41.265Z] Clicking element: Login Button
+[2026-06-25T15:42:41.265Z] 👀 Waiting for Login Button to be visible...
+[2026-06-25T15:42:41.276Z] ✅  Login Button is visible.
+[2026-06-25T15:42:41.383Z] 🛒 Adding product to cart: Sauce Labs Bike Light
+[2026-06-25T15:42:41.386Z] Clicking element: Add to cart button for Sauce Labs Bike Light
+[2026-06-25T15:42:41.387Z] 👀 Waiting for Add to cart button for Sauce Labs Bike Light to be visible...
+[2026-06-25T15:42:41.411Z] ✅  Add to cart button for Sauce Labs Bike Light is visible.
+[2026-06-25T15:42:41.463Z] ----------------------------------------------------------------------------------------------------
+[2026-06-25T15:42:41.463Z] START TEST: should decrease or hide cart badge when product is removed
+[2026-06-25T15:42:41.463Z] ----------------------------------------------------------------------------------------------------
+[2026-06-25T15:42:41.464Z] 🗑️ Removing product from cart: Sauce Labs Bike Light
+[2026-06-25T15:42:41.465Z] Clicking element: Remove button for Sauce Labs Bike Light
+[2026-06-25T15:42:41.465Z] 👀 Waiting for Remove button for Sauce Labs Bike Light to be visible...
+[2026-06-25T15:42:41.471Z] ✅  Remove button for Sauce Labs Bike Light is visible.
+[2026-06-25T15:42:41.525Z] 🎉 Product removal verified successfully!

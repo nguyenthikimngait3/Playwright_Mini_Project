@@ -6,11 +6,12 @@ import { logTitle, logStep } from "../../helpers/Logger";
 import { config } from "../../config";
 
 test.describe("Add To Cart Tests", () => {
+    let loginPage: LoginPage;
     let inventoryPage: InventoryPage;
 
     // HOOK CHUẨN: Tự động chạy trước mỗi test case để đăng nhập vào hệ thống
     test.beforeEach(async ({ page }) => {
-        const loginPage = new LoginPage(page);
+        loginPage = new LoginPage(page);
         inventoryPage = new InventoryPage(page);
 
         await loginPage.goto("");
@@ -18,6 +19,9 @@ test.describe("Add To Cart Tests", () => {
         await expect(inventoryPage.productHeader).toBeVisible();
     });
 
+    /**
+     * CASE 1: Thêm sp vào giỏ hàng và verify số sp hiển thị trên giỏ hàng
+     */
     test("should update shopping cart badge when adding an item", async ({ page }) => {
         logTitle("START TEST: should update shopping cart badge when adding an item");
 
@@ -31,6 +35,5 @@ test.describe("Add To Cart Tests", () => {
         await expect(inventoryPage.shoppingCartBadge).toHaveText("1");
 
         logStep("🎉 Add to cart verified successfully!");
-        await page.waitForTimeout(1000); // Chờ đồng bộ nhẹ theo style hình mẫu
     });
 });

@@ -37,7 +37,6 @@ export class BasePage {
         await locator.fill(text);
     }
 
-    //Viet them
     // Select dropdown option
     static async selectDropdown(locator: Locator, value: string, elementName: string) {
         logStep(`Selecting ${value} from ${elementName}`);

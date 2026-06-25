@@ -1,0 +1,17 @@
+[2026-06-25T14:58:18.694Z] Inputting standard_user into element: Username
+[2026-06-25T14:58:18.695Z] 👀 Waiting for Username to be visible...
+[2026-06-25T14:58:18.835Z] ✅  Username is visible.
+[2026-06-25T14:58:18.908Z] Inputting secret_sauce into element: Password
+[2026-06-25T14:58:18.909Z] 👀 Waiting for Password to be visible...
+[2026-06-25T14:58:18.919Z] ✅  Password is visible.
+[2026-06-25T14:58:18.939Z] Clicking element: Login Button
+[2026-06-25T14:58:18.939Z] 👀 Waiting for Login Button to be visible...
+[2026-06-25T14:58:18.948Z] ✅  Login Button is visible.
+[2026-06-25T14:58:19.196Z] ----------------------------------------------------------------------------------------------------
+[2026-06-25T14:58:19.196Z] START TEST: should update shopping cart badge when adding an item
+[2026-06-25T14:58:19.196Z] ----------------------------------------------------------------------------------------------------
+[2026-06-25T14:58:19.199Z] 🛒 Adding product to cart: Sauce Labs Backpack
+[2026-06-25T14:58:19.200Z] Clicking element: Add to cart button for Sauce Labs Backpack
+[2026-06-25T14:58:19.200Z] 👀 Waiting for Add to cart button for Sauce Labs Backpack to be visible...
+[2026-06-25T14:58:19.209Z] ✅  Add to cart button for Sauce Labs Backpack is visible.
+[2026-06-25T14:58:19.269Z] 🎉 Add to cart verified successfully!

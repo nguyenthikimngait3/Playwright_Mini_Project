@@ -45,7 +45,6 @@ test.describe("Login Page Tests", () => {
         expect(errorMessage).toBe(loginData.ERROR_LOCKED);
 
         logStep("🎉 Pass: Locked out behavior verified securely.");
-        await page.waitForTimeout(1000);
     });
 
     /**
@@ -61,6 +60,5 @@ test.describe("Login Page Tests", () => {
         expect(errorMessage).toContain(loginData.ERROR_WRONG);
 
         logStep("🎉 Pass: Wrong credentials behavior verified securely.");
-        await page.waitForTimeout(1000);
     });
 });

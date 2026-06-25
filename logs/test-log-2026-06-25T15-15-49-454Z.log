@@ -1,0 +1,56 @@
+[2026-06-25T15:15:53.729Z] Inputting standard_user into element: Username
+[2026-06-25T15:15:53.730Z] 👀 Waiting for Username to be visible...
+[2026-06-25T15:15:53.832Z] ✅  Username is visible.
+[2026-06-25T15:15:53.900Z] Inputting secret_sauce into element: Password
+[2026-06-25T15:15:53.900Z] 👀 Waiting for Password to be visible...
+[2026-06-25T15:15:53.909Z] ✅  Password is visible.
+[2026-06-25T15:15:53.929Z] Clicking element: Login Button
+[2026-06-25T15:15:53.930Z] 👀 Waiting for Login Button to be visible...
+[2026-06-25T15:15:53.938Z] ✅  Login Button is visible.
+[2026-06-25T15:15:54.177Z] ----------------------------------------------------------------------------------------------------
+[2026-06-25T15:15:54.177Z] START TEST: should sort products from A to Z
+[2026-06-25T15:15:54.177Z] ----------------------------------------------------------------------------------------------------
+[2026-06-25T15:15:54.178Z] 🔍 Sorting products by option: az
+[2026-06-25T15:15:54.209Z] ✅ Products sorted from A to Z
+[2026-06-25T15:15:55.287Z] Inputting standard_user into element: Username
+[2026-06-25T15:15:55.287Z] 👀 Waiting for Username to be visible...
+[2026-06-25T15:15:55.328Z] ✅  Username is visible.
+[2026-06-25T15:15:55.344Z] Inputting secret_sauce into element: Password
+[2026-06-25T15:15:55.345Z] 👀 Waiting for Password to be visible...
+[2026-06-25T15:15:55.357Z] ✅  Password is visible.
+[2026-06-25T15:15:55.372Z] Clicking element: Login Button
+[2026-06-25T15:15:55.373Z] 👀 Waiting for Login Button to be visible...
+[2026-06-25T15:15:55.380Z] ✅  Login Button is visible.
+[2026-06-25T15:15:55.480Z] ----------------------------------------------------------------------------------------------------
+[2026-06-25T15:15:55.480Z] START TEST: should sort products from Z to A
+[2026-06-25T15:15:55.480Z] ----------------------------------------------------------------------------------------------------
+[2026-06-25T15:15:55.481Z] 🔍 Sorting products by option: za
+[2026-06-25T15:15:55.527Z] ✅ Products sorted from Z to A
+[2026-06-25T15:15:56.571Z] Inputting standard_user into element: Username
+[2026-06-25T15:15:56.572Z] 👀 Waiting for Username to be visible...
+[2026-06-25T15:15:56.620Z] ✅  Username is visible.
+[2026-06-25T15:15:56.637Z] Inputting secret_sauce into element: Password
+[2026-06-25T15:15:56.638Z] 👀 Waiting for Password to be visible...
+[2026-06-25T15:15:56.646Z] ✅  Password is visible.
+[2026-06-25T15:15:56.662Z] Clicking element: Login Button
+[2026-06-25T15:15:56.663Z] 👀 Waiting for Login Button to be visible...
+[2026-06-25T15:15:56.671Z] ✅  Login Button is visible.
+[2026-06-25T15:15:56.765Z] ----------------------------------------------------------------------------------------------------
+[2026-06-25T15:15:56.765Z] START TEST: should sort products by price from low to high
+[2026-06-25T15:15:56.765Z] ----------------------------------------------------------------------------------------------------
+[2026-06-25T15:15:56.766Z] 🔍 Sorting products by option: lohi
+[2026-06-25T15:15:56.803Z] ✅ Products sorted by price from low to high
+[2026-06-25T15:15:57.848Z] Inputting standard_user into element: Username
+[2026-06-25T15:15:57.848Z] 👀 Waiting for Username to be visible...
+[2026-06-25T15:15:57.898Z] ✅  Username is visible.
+[2026-06-25T15:15:57.915Z] Inputting secret_sauce into element: Password
+[2026-06-25T15:15:57.915Z] 👀 Waiting for Password to be visible...
+[2026-06-25T15:15:57.922Z] ✅  Password is visible.
+[2026-06-25T15:15:57.935Z] Clicking element: Login Button
+[2026-06-25T15:15:57.935Z] 👀 Waiting for Login Button to be visible...
+[2026-06-25T15:15:57.940Z] ✅  Login Button is visible.
+[2026-06-25T15:15:58.024Z] ----------------------------------------------------------------------------------------------------
+[2026-06-25T15:15:58.024Z] START TEST: should sort products by price from high to low
+[2026-06-25T15:15:58.024Z] ----------------------------------------------------------------------------------------------------
+[2026-06-25T15:15:58.024Z] 🔍 Sorting products by option: hilo
+[2026-06-25T15:15:58.066Z] ✅ Products sorted by price from high to low
