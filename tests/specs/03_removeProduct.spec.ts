@@ -1,40 +1,30 @@
-// tests/specs/removeProduct.spec.ts
 import { test, expect } from "@playwright/test";
+import { logTitle } from "../../helpers/Logger";
+import { config } from "../../config";
 import { LoginPage } from "../../pages/LoginPage";
 import { InventoryPage } from "../../pages/InventoryPage";
-import { logTitle, logStep } from "../../helpers/Logger";
-import { config } from "../../config";
 
-test.describe("Remove Product Tests", () => {
+const PRODUCT = "Sauce Labs Backpack";
+
+test.describe("Remove Product From Cart Tests", () => {
     let loginPage: LoginPage;
     let inventoryPage: InventoryPage;
 
-    // HOOK CHUẨN: Đăng nhập và chuẩn bị sẵn 1 sản phẩm trong giỏ hàng trước khi chạy test xóa
     test.beforeEach(async ({ page }) => {
         loginPage = new LoginPage(page);
         inventoryPage = new InventoryPage(page);
-
         await loginPage.goto("");
         await loginPage.loginToApplication(config.valid_username, config.valid_password);
-        
-        // Pre-condition: Add sẵn sản phẩm vào giỏ hàng
-        await inventoryPage.addProductToCart("Sauce Labs Bike Light");
+        await inventoryPage.addProductToCart(PRODUCT);
     });
 
-    /**
-     * CASE 1: Xóa sp trong giỏ hàng và verify số sp trở về 0 trên giỏ hàng
-     */
-    test("should decrease or hide cart badge when product is removed", async ({ page }) => {
-        logTitle("START TEST: should decrease or hide cart badge when product is removed");
+    test("should remove product from shopping cart", async () => {
+        logTitle("START TEST: should remove product from shopping cart");
 
-        const targetProduct = "Sauce Labs Bike Light";
+        await inventoryPage.removeProductFromCart(PRODUCT);
 
-        // Thực hiện xóa sản phẩm
-        await inventoryPage.setLog(targetProduct).removeProductFromCart();
-
-        // Kiểm tra xem Badge giỏ hàng đã bị ẩn đi (số lượng về 0) hay chưa
         await expect(inventoryPage.shoppingCartBadge).not.toBeVisible();
 
-        logStep("🎉 Product removal verified successfully!");
+        logTitle("PASS: Product removed from cart successfully");
     });
 });

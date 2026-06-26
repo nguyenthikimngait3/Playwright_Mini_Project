@@ -29,7 +29,7 @@ test.describe("Login Page Tests", () => {
         await expect(inventoryPage.productHeader).toBeVisible();
         await expect(inventoryPage.productHeader).toHaveText("Products");
 
-        logStep("🎉 Pass: Login successful with secure credentials!");
+        logStep("Pass: Login successful with secure credentials!");
     });
 
     /**
@@ -44,7 +44,7 @@ test.describe("Login Page Tests", () => {
         const errorMessage = await loginPage.getErrorMessage();
         expect(errorMessage).toBe(loginData.ERROR_LOCKED);
 
-        logStep("🎉 Pass: Locked out behavior verified securely.");
+        logStep("Pass: Locked out behavior verified securely.");
     });
 
     /**
@@ -59,6 +59,6 @@ test.describe("Login Page Tests", () => {
         const errorMessage = await loginPage.getErrorMessage();
         expect(errorMessage).toContain(loginData.ERROR_WRONG);
 
-        logStep("🎉 Pass: Wrong credentials behavior verified securely.");
+        logStep("Pass: Wrong credentials behavior verified securely.");
     });
 });

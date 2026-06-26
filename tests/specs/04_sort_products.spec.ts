@@ -1,76 +1,68 @@
 import { test, expect } from "@playwright/test";
-import { LoginPage } from "../../pages/LoginPage";
-import { logTitle, logStep } from "../../helpers/Logger";
-import { InventoryPage } from "../../pages/InventoryPage";
+import { logTitle } from "../../helpers/Logger";
 import { config } from "../../config";
+import { LoginPage } from "../../pages/LoginPage";
+import { InventoryPage } from "../../pages/InventoryPage";
+import { BasePage } from "../../pages/BasePage";
 
-test.describe("Sort Product Tests", () => {
+test.describe("Sort Products Tests", () => {
     let loginPage: LoginPage;
     let inventoryPage: InventoryPage;
 
-    // HOOK CHUẨN: Tự động chạy trước mỗi test case để đăng nhập vào hệ thống
     test.beforeEach(async ({ page }) => {
         loginPage = new LoginPage(page);
         inventoryPage = new InventoryPage(page);
-
         await loginPage.goto("");
         await loginPage.loginToApplication(config.valid_username, config.valid_password);
-        await expect(inventoryPage.productHeader).toBeVisible();
     });
 
-    /**
-     * CASE 1: Short product từ A đến Z
-     */
-    test("should sort products from A to Z", async () => {
+    test("should sort products by name from A to Z", async () => {
+        logTitle("START TEST: should sort products by name from A to Z");
 
-        logTitle("START TEST: should sort products from A to Z");
-
-        // Chọn option A-Z
         await inventoryPage.sortProducts("az");
 
-        // Kiểm tra dropdown được chọn
-        await expect(inventoryPage.productSortDropdown).toHaveValue("az");
+        const names = await BasePage.getAllTexts(inventoryPage.productNames, "Product Names");
+        const sorted = [...names].sort();
+        expect(names).toEqual(sorted);
 
-        logStep("✅ Products sorted from A to Z");
+        logTitle("PASS: Products sorted A to Z correctly");
     });
 
-    /**
-     * CASE 2: Short product từ Z đến A
-     */
-    test("should sort products from Z to A", async () => {
-
-        logTitle("START TEST: should sort products from Z to A");
+    test("should sort products by name from Z to A", async () => {
+        logTitle("START TEST: should sort products by name from Z to A");
 
         await inventoryPage.sortProducts("za");
 
-        await expect(inventoryPage.productSortDropdown).toHaveValue("za");
+        const names = await BasePage.getAllTexts(inventoryPage.productNames, "Product Names");
+        const sorted = [...names].sort().reverse();
+        expect(names).toEqual(sorted);
 
-        logStep("✅ Products sorted from Z to A");
+        logTitle("PASS: Products sorted Z to A correctly");
     });
 
-    /**
-     * CASE 3: 
-     */
-    test("should sort products by price from low to high", async () => {
+    test("should sort products by price from low to high", async ({ page }) => {
         logTitle("START TEST: should sort products by price from low to high");
 
         await inventoryPage.sortProducts("lohi");
 
-        await expect(inventoryPage.productSortDropdown).toHaveValue("lohi");
+        const prices = await page.locator(".inventory_item_price").allTextContents();
+        const nums = prices.map(p => parseFloat(p.replace("$", "")));
+        const sorted = [...nums].sort((a, b) => a - b);
+        expect(nums).toEqual(sorted);
 
-        logStep("✅ Products sorted by price from low to high");
+        logTitle("PASS: Products sorted low to high correctly");
     });
 
-    /**
-     * CASE 4: 
-     */
-    test("should sort products by price from high to low", async () => {
+    test("should sort products by price from high to low", async ({ page }) => {
         logTitle("START TEST: should sort products by price from high to low");
 
         await inventoryPage.sortProducts("hilo");
 
-        await expect(inventoryPage.productSortDropdown).toHaveValue("hilo");
+        const prices = await page.locator(".inventory_item_price").allTextContents();
+        const nums = prices.map(p => parseFloat(p.replace("$", "")));
+        const sorted = [...nums].sort((a, b) => b - a);
+        expect(nums).toEqual(sorted);
 
-        logStep("✅ Products sorted by price from high to low");
+        logTitle("PASS: Products sorted high to low correctly");
     });
 });
