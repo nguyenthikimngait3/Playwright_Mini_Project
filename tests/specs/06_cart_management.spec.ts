@@ -1,41 +1,52 @@
 import { test, expect } from "@playwright/test";
+import { logTitle } from "../../helpers/Logger";
+import { config } from "../../config";
+import { LoginPage } from "../../pages/LoginPage";
+import { InventoryPage } from "../../pages/InventoryPage";
+import { CartPage } from "../../pages/CartPage";
 
-test.describe("Cart Tests", () => {
+const PRODUCT = "Sauce Labs Backpack";
+
+test.describe("Cart Management Tests", () => {
+    let loginPage: LoginPage;
+    let inventoryPage: InventoryPage;
+    let cartPage: CartPage;
 
     test.beforeEach(async ({ page }) => {
-
-        // Login
-        // Add product
+        loginPage = new LoginPage(page);
+        inventoryPage = new InventoryPage(page);
+        cartPage = new CartPage(page);
+        await loginPage.goto("");
+        await loginPage.loginToApplication(config.valid_username, config.valid_password);
+        await inventoryPage.addProductToCart(PRODUCT);
+        await inventoryPage.goToCart();
     });
 
-    test("should display product in cart", async () => {
+    test("should display added product in shopping cart", async () => {
+        logTitle("START TEST: should display added product in shopping cart");
 
-        logTitle("START TEST: Verify product in cart");
+        await expect(cartPage.cartItems).toHaveCount(1);
 
-        // Mở cart
-        await inventoryPage.shoppingCartLink.click();
-
-        // Kiểm tra số lượng item
-        await expect(
-            cartPage.cartItems
-        ).toHaveCount(1);
-
-        logStep("✅ Product displayed in cart");
+        logTitle("PASS: Product displayed in cart correctly");
     });
 
-    test("should remove product from cart", async () => {
+    test("should remove product from shopping cart", async () => {
+        logTitle("START TEST: should remove product from shopping cart");
 
-        logTitle("START TEST: Remove product from cart");
+        await cartPage.removeProduct(PRODUCT);
 
-        await cartPage.removeProduct(
-            "Sauce Labs Backpack"
-        );
+        await expect(cartPage.cartItems).toHaveCount(0);
 
-        await expect(
-            cartPage.cartItems
-        ).toHaveCount(0);
-
-        logStep("✅ Product removed successfully");
+        logTitle("PASS: Product removed from cart successfully");
     });
 
+    test("should continue shopping when Continue Shopping button is clicked", async ({ page }) => {
+        logTitle("START TEST: should continue shopping when Continue Shopping button is clicked");
+
+        await cartPage.continueShopping();
+
+        await expect(page).toHaveURL(/inventory/);
+
+        logTitle("PASS: Navigated back to inventory page successfully");
+    });
 });

@@ -44,12 +44,14 @@ export class BasePage {
     }
 
     // Get all texts
-    static async getAllTexts(locator: Locator) {
+    static async getAllTexts(locator: Locator, elementName: string) {
+        logStep(`Getting all texts from ${elementName}`);
         return await locator.allTextContents();
     }
 
     // Get total element count
-    static async getCount(locator: Locator) {
+    static async getCount(locator: Locator, elementName: string) {
+        logStep(`Getting element count of ${elementName}`);
         return await locator.count();
     }
 }
